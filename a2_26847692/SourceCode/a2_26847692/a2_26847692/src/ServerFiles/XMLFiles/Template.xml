@@ -1,0 +1,16 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Employees xmlns:sql="fsds"
+
+           sql:xsl="../Employee.xsl">
+
+    <sql:query>
+
+        SELECT First_Name_VC, Last_Name_VC FROM Employee_T
+
+        FOR XML AUTO
+
+    </sql:query>
+
+</Employees>

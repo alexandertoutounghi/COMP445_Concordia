@@ -1,0 +1,62 @@
+post -v -h application:"json" https://localhost:8080/
+post -v -h application:"json" https://localhost:8080/
+post -v -f TestFile.txt -h application:"json" https://localhost:8080/
+post -v -f TestFile.txt.txt -h application:"json" https://localhost:8080/
+post -v -f TestFile.txt -h application:"json" https://localhost:8080/ -o OutputFile.txt
+get -v -h application:"json" https://localhost:8080/
+get -v -h application:"json" https://localhost:8080/Newfile.txt
+get -v -h application:"json" https://localhost:8080/HTMLFiles/Template.html
+get -v -h application:"json" https://127.0.0.1:1234/
+get -v -h application:"json" https://localhost:1234/
+get -v -h application:"json" https://localhost:1234/
+get -v -h application:"json" https://localhost:1234/helloworld.txt
+get -v -h application:"json" https://localhost:1234/
+get -v -h application:"json" https://localhost:1234/TextFiles/hello
+get -v -h application:"json" https://localhost:1234/TextFiles/hello.txt
+get -v -h application:"json" https://localhost:1234/TextFiles/get
+post -d hello world -v -h application:"json" https://localhost:1234/TextFiles/myworld
+post -d hello world -v -h application:"json" https://localhost:1234/TextFiles/myworld
+post -d hello world -v -h application:"json" https://localhost:1234/TextFiles/myworld.txt
+post -d hello world -v -h application:"json" https://localhost:1234/
+post -v -h -d hello world application:"json" https://localhost:1234/
+post -v -d hello world -h application:"json" https://localhost:1234/
+post -v -d helloworld -h application:"json" https://localhost:1234/
+post -v -d hello world -h application:"json" https://localhost:1234/
+post -v -d helloworld -h application:"json" https://localhost:1234/
+post -v -d helloworld -h application:"json" https://localhost:1234/
+post -v -d hello world -h application:"json" https://localhost:1234/
+post -v -d hello world my name is fjdsjfds -h application:"json" https://localhost:1234/
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:8080/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1026/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1026/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1026/newfile
+post -v -h my:application -f helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d hellow orld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d hello world -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d "hello world" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d hello world -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d "hello world" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1026/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d hello world -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d \hello world\\ -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d ''hello world'' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d '"hello world"' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d \"hello world\" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d "hello world" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d "hello world" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d '"hello world"' -h application:"json" https://localhost:1234/newfile

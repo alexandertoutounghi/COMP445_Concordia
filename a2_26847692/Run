@@ -1,0 +1,67 @@
+#!/bin/bash
+hash gnome-terminal 2>/dev/null || { echo >&2 "This script requires gnome-terminal to run but it's not installed.
+To install run \"sudo apt-get gnome-terminal\" Aborting."; exit 1; }
+
+#All the test cases in the test case file
+declare -A SERVERS=(
+ ["PORT4563"]=1  ["PORT1234"]=1  ["ERROR_1"]=1 ["PORT8080XML"]=1
+ ["PORT8080JSON"]=1 ["ERROR_2"]=1 ["PORTDEFAULT"]=1 ["ERROR_3"]=1
+ ["ERROR_4"]=1 ["HELP"]=1
+)
+
+# Command for setting up the server
+COMMAND=""
+# First_Window for display
+FIRSTWINDOW="$(tty)"
+SECONDWINDOW="/dev/pts/1"
+
+SERVERDIR="./ServerDir/ServerFiles"
+CLIENTDIR="./ClientDir/"
+# httpc="java -jar ../ClientDir/httpsc.jar"
+httpc="./ClientDir/httpsc"
+httpfs="./ServerDir/httpfs"
+
+COUNT=0
+chmod u+x $httpc
+chmod u+x $httpfs
+# chmod 700 $Ser
+#
+#TextFiles Dir
+chmod 000 "$SERVERDIR/TextFiles/newFile.txt"
+#read only
+chmod 400 "$SERVERDIR/TextFiles/goob.txt"
+#write only
+chmod 200 "$SERVERDIR/TextFiles/dfs/hello.txt"
+#HTMLFiles Dir
+chmod 100 "$SERVERDIR/HTMLFiles/NewTemplate.html"
+#JSONFiles Dir
+#write only
+chmod 200 "$SERVERDIR/JSONFiles/Description.json"
+#XMLFiles Dir
+#no permissions
+chmod 000 "$SERVERDIR/XMLFiles/Template.xml"
+
+CDIR=$(eval pwd)
+while read p; do
+#    if  [ "$p" = "$RUN1" ] || [ "$p" = "$RUN2" ] || [ "$p" = "$RUN3" ] || [ "$p" = "$RUN4" ] || [ "$p" = "$RUN5" ] || [ "$p" = "$RUN6" ] || [ "$p" = "$RUN7" ] || [ "$p" = "$RUN8" ] || [ "$p" = "$RUN9" ] || [ "$p" = "$RUN10" ]
+    if [ -n "${SERVERS[$p]}" ]
+    then
+      if (( COUNT != 0 ))
+      then
+        pkill gnome-terminal
+        # killall java
+      fi
+      COUNT=$((COUNT+1))
+      read p
+      COMMAND=$p
+      # printf "\n\nRunning Server...Command: httpfs $COMMAND \n\n" | tee -a TestCaseResults.txt
+      gnome-terminal --command="$httpfs $p | tee -a ServerTestResult.txt"
+      sleep 5
+    else
+      # printf "\n\nClient Sending Request....Command: httpc $p \n\n" | tee -a $SECONDWINDOW "TestCaseResults.txt"
+      eval $httpc $p | tee -a "ClientTestResult.txt"
+      sleep 5
+    fi
+done < "./TestCases"
+
+pkill gnome-terminal

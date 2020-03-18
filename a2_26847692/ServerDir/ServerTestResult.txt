@@ -1,0 +1,179 @@
+[32mStarting the FTP server...Listening at Port 4563[0m
+[34mWaiting for a new connection...[0m
+[33mClient Connected! Receiving Transmission...[0m
+[33mTransmission Received![0m
+true
+[36mMessage:
+HTTP/1.0 200 OK
+application: txtfile
+my: reply
+
+[0m[34m
+End Connection![0m
+[34mWaiting for a new connection...[0m
+[33mClient Connected! Receiving Transmission...[0m
+[33mTransmission Received![0m
+false
+[36mMessage:
+Sent response to the client!HTTP/1.0 Status 403 Forbidden
+Intentional:Error
+read-only:file
+user-agent:homeDir
+
+No Read/Write Access to ./ServerFiles/goob.txt --ENDREQUEST
+Content-Disposition: form-data; name=./TestingFiles/OutputFile.txt; filename=./TestingFiles/OutputFile.txt
+
+ 200 OK
+application:json
+Content-Length: 206
+Content-Type: text/html; charset=utf-8
+Content-Disposition:attachment; filename=TestFile.txt
+File:1
+Template	Item	Item_Colour	Item_wt	Grows_in Salad 	Raw
+fruit		Apples 	Red_Green	300	snowy
+fruit		Orange 	Oranges 	250	Sunny
+fruit		Grape 	Violet		25	Sunny
+Vegetable	Carrot	Red   		100 	Hilly 	Yes 	Yes
+
+--ENDREQUEST--[0m[34m
+End Connection![0m
+[34mWaiting for a new connection...[0m
+[33mClient Connected! Receiving Transmission...[0m
+[33mTransmission Received![0m
+[36mMessage:
+HTTP/1.0 200 OK
+no:error
+read-only:file
+Content-Length: 10
+Content-Type: text/html
+Content-Disposition:attachment; filename=goob.txt
+helloworld[0m[34m
+End Connection![0m
+[34mWaiting for a new connection...[0m
+[33mClient Connected! Receiving Transmission...[0m
+[33mTransmission Received![0m
+true
+[36mMessage:
+HTTP/1.0 200 OK
+write to file:noerror
+write-only:file
+
+[0m[34m
+End Connection![0m
+[34mWaiting for a new connection...[0m
+[33mClient Connected! Receiving Transmission...[0m
+[33mTransmission Received![0m
+[36mMessage:
+Sent response to the client!HTTP/1.0 Status 403 Forbidden
+another:error
+write-only:file
+
+No Read/Write Access to ./ServerFiles/dfs/hello.txt[0m[34m
+End Connection![0m
+[34mWaiting for a new connection...[0m
+[33mClient Connected! Receiving Transmission...[0m
+[33mTransmission Received![0m
+[36mMessage:
+HTTP/1.0 200 OK
+list:dir
+Application:XML
+Printed Directories:
+TextFiles
+	hello
+	newFile.txt
+	goob.txt
+	hello.txt
+	get
+	dfs
+		hello.txt
+		fdsfd.txt
+		createNew.txt
+[0m[34m
+End Connection![0m
+[34mWaiting for a new connection...[0m
+[33mClient Connected! Receiving Transmission...[0m
+[33mTransmission Received![0m
+[36mMessage:
+HTTP/1.0 200 OK
+
+Content-Length: 5162
+Content-Type: text/html
+Content-Disposition:attachment; filename=hello.txt
+post -v -h application:"json" https://localhost:8080/
+post -v -h application:"json" https://localhost:8080/
+post -v -f TestFile.txt -h application:"json" https://localhost:8080/
+post -v -f TestFile.txt.txt -h application:"json" https://localhost:8080/
+post -v -f TestFile.txt -h application:"json" https://localhost:8080/ -o OutputFile.txt
+get -v -h application:"json" https://localhost:8080/
+get -v -h application:"json" https://localhost:8080/Newfile.txt
+get -v -h application:"json" https://localhost:8080/HTMLFiles/Template.html
+get -v -h application:"json" https://127.0.0.1:1234/
+get -v -h application:"json" https://localhost:1234/
+get -v -h application:"json" https://localhost:1234/
+get -v -h application:"json" https://localhost:1234/helloworld.txt
+get -v -h application:"json" https://localhost:1234/
+get -v -h application:"json" https://localhost:1234/TextFiles/hello
+get -v -h application:"json" https://localhost:1234/TextFiles/hello.txt
+get -v -h application:"json" https://localhost:1234/TextFiles/get
+post -d hello world -v -h application:"json" https://localhost:1234/TextFiles/myworld
+post -d hello world -v -h application:"json" https://localhost:1234/TextFiles/myworld
+post -d hello world -v -h application:"json" https://localhost:1234/TextFiles/myworld.txt
+post -d hello world -v -h application:"json" https://localhost:1234/
+post -v -h -d hello world application:"json" https://localhost:1234/
+post -v -d hello world -h application:"json" https://localhost:1234/
+post -v -d helloworld -h application:"json" https://localhost:1234/
+post -v -d hello world -h application:"json" https://localhost:1234/
+post -v -d helloworld -h application:"json" https://localhost:1234/
+post -v -d helloworld -h application:"json" https://localhost:1234/
+post -v -d hello world -h application:"json" https://localhost:1234/
+post -v -d hello world my name is fjdsjfds -h application:"json" https://localhost:1234/
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:8080/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1026/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1026/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1026/newfile
+post -v -h my:application -f helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d hellow orld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d hello world -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d "hello world" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d hello world -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d "hello world" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1026/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d hello world -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d \hello world\\ -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d ''hello world'' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d '"hello world"' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d \"hello world\" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d "hello world" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d "hello world" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d '"hello world"' -h application:"json" https://localhost:1234/newfile
+[0m[34m
+End Connection![0m
+[34mWaiting for a new connection...[0m
+[32mStarting the FTP server...Listening at Port 1234[0m
+[34mWaiting for a new connection...[0m
+[33mClient Connected! Receiving Transmission...[0m
+[33mTransmission Received![0m
+[36mMessage:
+Sent response to the client!HTTP/1.0 Status 404: Not Found
+nosuchfile:exists
+User-Agent: Concordia
+
+
+ Could not find the requested url ./ServerFiles/HTMLFiles/FIle.html[0m[34m
+End Connection![0m
+[34mWaiting for a new connection...[0m

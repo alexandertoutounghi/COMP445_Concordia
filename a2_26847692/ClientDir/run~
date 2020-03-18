@@ -1,0 +1,12 @@
+JAVA="java -jar ./httpc.jar"
+echo "Running Test Batch For Client HTTP" 2>&1 | tee -a "ClientTestResults.txt"
+testcount=0
+while read p; do
+	testcount=$((testcount+1))
+	echo "================= Running Test Count # $testcount ================="   2>&1 | tee -a "ClientTestResults.txt"
+	eval $JAVA $p  2>&1 | tee -a "ClientTestResults.txt"
+done <ClientTestCases.txt
+
+
+
+

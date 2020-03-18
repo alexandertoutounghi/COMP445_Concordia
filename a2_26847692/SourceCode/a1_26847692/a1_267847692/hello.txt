@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Date: Mon, 16 Mar 2020 04:07:11 GMT
+Content-Type: application/json
+Content-Length: 442
+Connection: close
+Server: gunicorn/19.9.0
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+
+{
+  "args": {}, 
+  "data": "goodbye.txt", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Content-Length": "11", 
+    "Hello": "world", 
+    "Host": "a0207c42-pmhttpbin-pmhttpb-c018-592832243.us-east-1.elb.amazonaws.com", 
+    "X-Amzn-Trace-Id": "Root=1-5e6efb6f-e4265d43050a4b6f221f54c1"
+  }, 
+  "json": null, 
+  "origin": "173.177.124.96", 
+  "url": "http://a0207c42-pmhttpbin-pmhttpb-c018-592832243.us-east-1.elb.amazonaws.com/post"
+}

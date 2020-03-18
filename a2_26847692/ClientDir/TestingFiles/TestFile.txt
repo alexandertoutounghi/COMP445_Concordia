@@ -1,0 +1,6 @@
+File:1
+Template	Item	Item_Colour	Item_wt	Grows_in Salad 	Raw
+fruit		Apples 	Red_Green	300	snowy
+fruit		Orange 	Oranges 	250	Sunny
+fruit		Grape 	Violet		25	Sunny
+Vegetable	Carrot	Red   		100 	Hilly 	Yes 	Yes

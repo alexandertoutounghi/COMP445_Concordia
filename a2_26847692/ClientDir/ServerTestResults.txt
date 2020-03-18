@@ -1,0 +1,102 @@
+Running Test Batch For Client HTTP
+================= Running Test Count # 1 =================
+[32mStarting the Client Server...sending POST Request to localhost port 1234[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 200 OK
+application:json
+Content-Length: 13
+Content-Type: text/html; charset=utf-8
+Content-Disposition:Inline
+"hello world"
+[0m
+[32mClient Server Terminated.[0m
+================= Running Test Count # 2 =================
+[32mStarting the Client Server...sending POST Request to localhost port 1234[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 200 OK
+application:json
+Content-Length: 13
+Content-Type: text/html; charset=utf-8
+Content-Disposition:Inline
+"hello world"
+[0m
+[32mClient Server Terminated.[0m
+================= Running Test Count # 3 =================
+[32mStarting the Client Server...sending POST Request to localhost port 1234[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 200 OK
+application:json
+Content-Length: 13
+Content-Type: text/html; charset=utf-8
+Content-Disposition:Inline
+"hello world"
+[0m
+[32mClient Server Terminated.[0m
+================= Running Test Count # 4 =================
+[32mStarting the Client Server...sending POST Request to localhost port 1234[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 Status 400 Bad Request
+world
+application:json
+
+[0m
+[32mClient Server Terminated.[0m
+================= Running Test Count # 5 =================
+[32mStarting the Client Server...sending POST Request to localhost port 1234[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 Status 400 Bad Request
+world
+application:json
+
+[0m
+[32mClient Server Terminated.[0m
+================= Running Test Count # 6 =================
+[32mStarting the Client Server...sending POST Request to localhost port 1234[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 Status 400 Bad Request
+world
+application:json
+
+[0m
+[32mClient Server Terminated.[0m
+================= Running Test Count # 7 =================
+[32mStarting the Client Server...sending GET Request to localhost port 1234[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 200 OK
+mycontent:length
+Application:XML
+Printed Directories:
+ServerFiles
+	helloworld.txt
+	HTMLFiles
+		Template.html
+	JSONFiles
+		Description.json
+		test.json
+	newfile
+	test.txt
+	TextFiles
+		dfs
+			fdsfd.txt
+		get
+		goob.txt
+		hello
+		hello.txt
+	XMLFiles
+		Template.xml
+[0m
+[32mClient Server Terminated.[0m

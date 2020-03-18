@@ -1,0 +1,74 @@
+****Separate  Window**** 
+Server:
+./ServerDir/httpfs -v -p 4563 -d ./ServerFiles/TextFiles
+****Another Separate  Window**** 
+Client: 
+./ClientDir/httpsc post -v -h "Intentional:Error" -h "read-only:file" -f "./TestingFiles/OutputFile.txt" -h "user-agent:homeDir" https://localhost:4563/goob.txt
+./ClientDir/httpsc get -h "no:error" -h "read-only:file" -v "https://localhost:4563/goob.txt"
+./ClientDir/httpsc post -h "write to file:noerror" -f "./TestingFiles/ClientTestCases.txt" -h "write-only:file" -v "https://localhost:4563/dfs/hello.
+./ClientDir/httpsc post get -h "another:error" -h "write-only:file" -v "https://localhost:4563/dfs/hello.txt"
+./ClientDir/httpsc post get -v -h "list:dir" -h "Application:XML" http://127.0.0.1:4563/
+./ClientDir/httpsc get -v "https://localhost:4563/hello.txt"
+./ClientDir/httpsc get -v -h "cannot:read" -h "https://localhost:4563/newFile.txt
+./ClientDir/httpsc post -v -h "cannot:write" -f "NewTextFile.txt" "https://localhost:4563/newFile.txt
+
+
+
+****Separate  Window**** 
+Server:
+./ServerDir/httpfs -p 1234 -v
+
+****Another Separate  Window**** 
+Client: 
+./ClientDir/httpsc get -h "nosuchfile:exists" -h "User-Agent: Concordia" -v http://127.0.0.1:1234/HTMLFiles/FIle.html
+./ClientDir/httpsc get -h "nosuchfile:exists" -h "User-Agent: Concordia" -v http://127.0.0.1:1234/HTMLFiles/FIle.html
+./ClientDir/httpsc post -d "hello world" -h "nosuchfile:exists" -h '"User-Agent: Concordia"' -v http://127.0.0.1:1234/HTMLFiles/aFIle.html
+
+
+
+****Error Server**** 
+./ServerDir/httpfs -v -p ./ServerFiles/JSONFiles
+
+
+****Separate  Window**** 
+Server:
+./ServerDir/httpfs -v -d ./ServerFiles/JSONFiles
+****Another Separate  Window**** 
+Client: 
+./ClientDir/httpsc get -v -h "file:doesntexist" https://127.0.0.1:8080/FILE.json
+./ClientDir/httpsc post -v -d "{"name":JSONFIles,"age":10000}" -h "Application:json" -h "User-Agent:Concordia" "https://localhost:8080/someFile.xml"
+
+
+
+****Separate  Window**** 
+Server:
+./ServerDir/httpfs -v -d ./ServerFiles/XMLFiles
+
+****Another Separate  Window**** 
+Client: 
+./ClientDir/httpsc post -v -f "./TestingFiles/xmlFile.txt" -h "no write :newFile" "http://127.0.0.1:8080/Template.xml"
+./ClientDir/httpsc get -v -h "no:read" -h "Application:XML" http://127.0.0.1:8080/Template.xml
+./ClientDir/httpsc get -v -h "list:dir" -h "Application:XML" http://127.0.0.1:8080/
+
+
+****Separate  Window**** 
+Server:
+./ServerDir/httpfs -v -d ./ServerFiles/XMLFilesfdfsfds
+
+****Another Separate  Window**** 
+Client:
+./ServerDir/httpfs -v -d
+./ClientDir/httpsc ./ServerDir/httpfs get -v -h "list:dir" -h "Application:XML" http://127.0.0.1:8080/
+./ClientDir/httpsc post -d "trying to post data to the serverfiles directory" -h "User-Agent:Hacker!" http://localhost:8080/
+
+****Error Server Invalid Port**** 
+./ServerDir/httpfs -v -p 999
+
+****Error Server Wrong Port**** 
+./ServerDir/httpfs -v -p 7000
+
+****Error Wrong Dir**** 
+./ServerDir/httpfs -v -d /usr/bin/root
+
+HELP
+./ServerDir/httpfs help

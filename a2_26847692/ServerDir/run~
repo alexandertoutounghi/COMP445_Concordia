@@ -1,0 +1,19 @@
+#!/bin/bash
+JAVA="java -jar ./httpfs.jar"
+echo "Running Test Batch For Client HTTP" 2>&1 | tee -a "ServerTestResults.txt"
+testcount=0
+
+
+trap "killall java;continue;" INT
+#arr=()
+while IFS= read -r line
+do
+    testcount=$((testcount+1))
+    sleep 2
+    printf "================= Running Test Count #$testcount  =================\nCommand: $line \n" 2>&1 | tee -a "ServerTestResults.txt"
+    sleep 2
+    printf "ctrl+c to move to next server iteration\nctrl+\ to terminate the script"
+    eval $JAVA $line  2>&1 | tee -a "ServerTestResults.txt"
+done < "./ServerTestCases.txt"
+killall java
+#

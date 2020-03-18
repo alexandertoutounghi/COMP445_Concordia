@@ -1,0 +1,23 @@
+#!/bin/bash
+cd $(dirname $0)
+chmod u+x ./httpc.jar
+DFLAG="-d"
+HFLAG="-h"
+JAVA="java -jar httpc.jar"
+arr=( "$@" )
+var=""
+
+
+for i in "${!arr[@]}";do
+	if [[ ${arr[$i]} = ${DFLAG} || ${arr[$i]} = ${HFLAG} ]];	then
+		var="${var} ${arr[$i]}"
+		i=$((i+1))
+		arr[i]="'\"${arr[$i]}\"'"
+		continue
+	fi
+	var="${var} ${arr[$i]}"
+done
+
+COMMAND=$var
+printf "\n\nClient Sending Request....COMMAND: httpc $COMMAND\n\nResult:\n\n" 2>&1 | tee -a "ClientTestResults.txt"
+eval $JAVA $var 2>&1 | tee -a "ClientTestResults.txt"

@@ -1,0 +1,205 @@
+
+
+Client Sending Request....COMMAND: httpc  post -v -d '"sending a message to the TextFiles Dir"' -h '"application: txtfile"' -h '"my: reply"' https://localhost:4563/dfs/createNew.txt
+
+Result:
+
+[32mStarting the Client Server...sending POST Request to localhost port 4563[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 200 OK
+application: txtfile
+my: reply
+
+[0m
+[32mClient Server Terminated.[0m
+
+
+Client Sending Request....COMMAND: httpc  post -v -h '"Intentional:Error"' -h '"read-only:file"' -f ./TestingFiles/OutputFile.txt -h '"user-agent:homeDir"' https://localhost:4563/goob.txt
+
+Result:
+
+[32mStarting the Client Server...sending POST Request to localhost port 4563[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 Status 403 Forbidden
+Intentional:Error
+read-only:file
+user-agent:homeDir
+
+[0m
+[32mClient Server Terminated.[0m
+
+
+Client Sending Request....COMMAND: httpc  get -h '"no:error"' -h '"read-only:file"' -v https://localhost:4563/goob.txt
+
+Result:
+
+[32mStarting the Client Server...sending GET Request to localhost port 4563[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 200 OK
+no:error
+read-only:file
+Content-Length: 10
+Content-Type: text/html
+Content-Disposition:attachment; filename=goob.txt
+helloworld
+[0m
+[32mClient Server Terminated.[0m
+
+
+Client Sending Request....COMMAND: httpc  post -h '"write to file:noerror"' -f ./TestingFiles/ClientTestCases.txt -h '"write-only:file"' -v https://localhost:4563/dfs/hello.txt
+
+Result:
+
+[32mStarting the Client Server...sending POST Request to localhost port 4563[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 200 OK
+write to file:noerror
+write-only:file
+
+[0m
+[32mClient Server Terminated.[0m
+
+
+Client Sending Request....COMMAND: httpc  get -h '"another:error"' -h '"write-only:file"' -v https://localhost:4563/dfs/hello.txt
+
+Result:
+
+[32mStarting the Client Server...sending GET Request to localhost port 4563[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 Status 403 Forbidden
+another:error
+write-only:file
+
+[0m
+[32mClient Server Terminated.[0m
+
+
+Client Sending Request....COMMAND: httpc  get -v -h '"list:dir"' -h '"Application:XML"' http://127.0.0.1:4563/
+
+Result:
+
+[32mStarting the Client Server...sending GET Request to localhost port 4563[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 200 OK
+list:dir
+Application:XML
+Printed Directories:
+TextFiles
+	hello
+	newFile.txt
+	goob.txt
+	hello.txt
+	get
+	dfs
+		hello.txt
+		fdsfd.txt
+		createNew.txt
+[0m
+[32mClient Server Terminated.[0m
+
+
+Client Sending Request....COMMAND: httpc  get -v https://localhost:4563/hello.txt
+
+Result:
+
+[32mStarting the Client Server...sending GET Request to localhost port 4563[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 200 OK
+
+Content-Length: 5162
+Content-Type: text/html
+Content-Disposition:attachment; filename=hello.txt
+post -v -h application:"json" https://localhost:8080/
+post -v -h application:"json" https://localhost:8080/
+post -v -f TestFile.txt -h application:"json" https://localhost:8080/
+post -v -f TestFile.txt.txt -h application:"json" https://localhost:8080/
+post -v -f TestFile.txt -h application:"json" https://localhost:8080/ -o OutputFile.txt
+get -v -h application:"json" https://localhost:8080/
+get -v -h application:"json" https://localhost:8080/Newfile.txt
+get -v -h application:"json" https://localhost:8080/HTMLFiles/Template.html
+get -v -h application:"json" https://127.0.0.1:1234/
+get -v -h application:"json" https://localhost:1234/
+get -v -h application:"json" https://localhost:1234/
+get -v -h application:"json" https://localhost:1234/helloworld.txt
+get -v -h application:"json" https://localhost:1234/
+get -v -h application:"json" https://localhost:1234/TextFiles/hello
+get -v -h application:"json" https://localhost:1234/TextFiles/hello.txt
+get -v -h application:"json" https://localhost:1234/TextFiles/get
+post -d hello world -v -h application:"json" https://localhost:1234/TextFiles/myworld
+post -d hello world -v -h application:"json" https://localhost:1234/TextFiles/myworld
+post -d hello world -v -h application:"json" https://localhost:1234/TextFiles/myworld.txt
+post -d hello world -v -h application:"json" https://localhost:1234/
+post -v -h -d hello world application:"json" https://localhost:1234/
+post -v -d hello world -h application:"json" https://localhost:1234/
+post -v -d helloworld -h application:"json" https://localhost:1234/
+post -v -d hello world -h application:"json" https://localhost:1234/
+post -v -d helloworld -h application:"json" https://localhost:1234/
+post -v -d helloworld -h application:"json" https://localhost:1234/
+post -v -d hello world -h application:"json" https://localhost:1234/
+post -v -d hello world my name is fjdsjfds -h application:"json" https://localhost:1234/
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:8080/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1026/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1026/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1026/newfile
+post -v -h my:application -f helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d hellow orld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d hello world -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d "hello world" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d hello world -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d "hello world" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -f TestHTML.html -h application:"json" https://localhost:1026/newfile
+post -v -h my:application -d helloworld -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d hello world -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d \hello world\\ -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d ''hello world'' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d 'hello world' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d '"hello world"' -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d \"hello world\" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d "hello world" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d "hello world" -h application:"json" https://localhost:1234/newfile
+post -v -h my:application -d '"hello world"' -h application:"json" https://localhost:1234/newfile
+[0m
+[32mClient Server Terminated.[0m
+
+
+Client Sending Request....COMMAND: httpc  get -h '"nosuchfile:exists"' -h '"User-Agent: Concordia"' -v http://127.0.0.1:1234/HTMLFiles/FIle.html
+
+Result:
+
+[32mStarting the Client Server...sending GET Request to localhost port 1234[0m
+[33mSending Request to server...[0m
+[33mRequest Sent! Awaiting Reply...
+[0m[34mResponse Received! Message:
+[0m[36mHTTP/1.0 Status 404: Not Found
+nosuchfile:exists
+User-Agent: Concordia
+
+[0m
+[32mClient Server Terminated.[0m

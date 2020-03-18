@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="httpfs:jar">
+    <output-path>$PROJECT_DIR$/../../../../../../../..</output-path>
+    <root id="archive" name="httpfs.jar">
+      <element id="module-output" name="a2_26847692" />
+    </root>
+  </artifact>
+</component>
